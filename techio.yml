@@ -1,4 +1,4 @@
-title: Custom Template
+title: call(), apply() and bind() Methods in JavaScript.
 plan:
 - title: Welcome
   statement: markdowns/welcome.md
