@@ -85,5 +85,5 @@ Note that when using the apply() function the parameter must be placed in an arr
 
 bind(), call() and apply() functions can make your life easier when you need to set the value of ‘this’. Hope the post was helpful.
 
-You can visit for learning ES6 https://rapides6.herokuapp.com 
+You can visit for learning ES6 : https://rapides6.herokuapp.com 
 
