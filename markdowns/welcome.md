@@ -21,12 +21,12 @@ var car = {
 ```
 The above will work perfectly fine as long as we use it this way:
 ```javascript
-car.displayDetails()
+car.displayDetails(); // GA12345 Toyota
 ```
 But what if we want to borrow a method?
 ```javascript
 var myCarDetails =  car.displayDetails;
-myCarDetails()
+myCarDetails();
 ```
 
 Well, this won’t work as the “this” will be now assigned to the global context which doesn’t have neither the registrationNumber nor the brand property.
@@ -35,8 +35,8 @@ Well, this won’t work as the “this” will be now assigned to the global con
 
 For such cases we can use the ECMAScript 5 bind() method of the Function.prototype property. This means bind() can be used by every single function.
 ```javascript
-var myCarDetails = car.displayDetails.bind(car)
-myCarDetails()
+var myCarDetails = car.displayDetails.bind(car); 
+myCarDetails(); // GA12345 Toyota
 ```
 The bind() method creates a new function where “this” refers to the parameter in the parenthesis in the above case “car”. This way the bind() method enables calling a function with a specified “this” value.
 
@@ -55,7 +55,7 @@ var car = {
 ```
 Example of passing arguments with bind():
 ```javascript
-var myCarDetails = car.displayDetails.bind(car, "Vivian")
+var myCarDetails = car.displayDetails.bind(car, "Vivian"); // Vivian, this is your car: GA12345 Toyota
 ```
 
 ### <strong>call() and apply() methods</strong>
@@ -75,12 +75,12 @@ function displayDetails(ownerName) {
 ```
 We can use the apply() function:
 ```javascript
-displayDetails.apply(car, ["Vivian"])
+displayDetails.apply(car, ["Vivian"]); // Vivian, this is your car: GA12345 Toyota
 ```
 Or
 
 ```javascript
-displayDetails.call(car, "Vivian")
+displayDetails.call(car, "Vivian"); // Vivian, this is your car: GA12345 Toyota
 ```
 Note that when using the apply() function the parameter must be placed in an array. Call() accepts both an array of parameters and a parameter itself. Both are great tools for borrowing functions in JavaScript.
 
