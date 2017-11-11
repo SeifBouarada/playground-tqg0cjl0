@@ -8,9 +8,16 @@ Working with JavaScript “this” keyword can be tricky. Not knowing the backgr
 <li>“this” refers to an object which calls the function it contains.</li>
 <li>In the global context “this” refers to either window object or is undefined if the ‘strict mode’ is used.</li>
 </ol>
-1.“this” always refers to an object.
-2.“this” refers to an object which calls the function it contains.
-3In the global context “this” refers to either window object or is undefined if the ‘strict mode’ is used.
-I would like to focus on the first two rules specifically.
+
+```javascript
+var car = { 
+    registrationNumber: "GA12345",
+    brand: "Toyota",
+
+    displayDetails: function(){
+        console.log(this.registrationNumber + " " + this.brand);
+    }
+}
+```
 
 
