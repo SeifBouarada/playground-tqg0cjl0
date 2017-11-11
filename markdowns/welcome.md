@@ -65,12 +65,13 @@ Similar but slightly different usage provide the call() and apply() methods whic
 This time there is a car object without the displayDetails function, which is located in the global context.
 ```javascript
 var car = { 
-            registrationNumber: "GA12345",
-            brand: "Toyota"
-        }
+    registrationNumber: "GA12345",
+    brand: "Toyota"
+}
 
-function displayDetails(ownerName){
-               console.log(ownerName + ", this is your car: " + this.registrationNumber + " " + this.brand);
+function displayDetails(ownerName) {
+    console.log(ownerName + ", this is your car: " + this.registrationNumber + " " + this.brand);
+}
 ```
 We can use the apply() function:
 ```javascript
