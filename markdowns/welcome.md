@@ -144,10 +144,4 @@ var zipCode = {
 };
 updateZipCode.apply(zipCode, '11888', 'us');
 ```
-```javascript runnable
-```
-```javascript runnable
-```
-```javascript runnable
-```
 
