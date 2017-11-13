@@ -88,3 +88,66 @@ bind(), call() and apply() functions can make your life easier when you need to 
 
 You can visit for learning ES6 : https://rapides6.herokuapp.com 
 
+# Learning Exercise !!!
+
+```javascript runnable
+var updateZipCode = function () {
+    console.log(this);
+};
+updateZipCode();
+```
+```javascript runnable
+var updateZipCode = function () {
+    console.log(this);
+};
+updateZipCode.call({});
+```
+```javascript runnable
+var updateZipCode = function () {
+    console.log(this);
+};
+updateZipCode.call({ zip: '11787'});
+```
+```javascript runnable
+var updateZipCode = function () {
+    console.log(this);
+};
+var zipCode = {
+    zip: '11787'
+};
+updateZipCode.call(zipCode);
+```
+```javascript runnable
+var updateZipCode = function (newZip, country) {
+    console.log(newZip + ' ' + country);
+};
+var zipCode = {
+    zip: '11787'
+};
+updateZipCode.call(zipCode, '11888', 'us');
+```
+```javascript runnable
+var updateZipCode = function (newZip, country) {
+    console.log(newZip + ' ' + country);
+};
+var zipCode = {
+    zip: '11787'
+};
+updateZipCode.apply(zipCode, ['11888', 'us']);
+```
+```javascript runnable
+var updateZipCode = function (newZip, country) {
+    console.log(newZip + ' ' + country);
+};
+var zipCode = {
+    zip: '11787'
+};
+updateZipCode.apply(zipCode, '11888', 'us');
+```
+```javascript runnable
+```
+```javascript runnable
+```
+```javascript runnable
+```
+
