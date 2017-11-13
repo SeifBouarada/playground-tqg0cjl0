@@ -91,14 +91,14 @@ You can visit for learning ES6 : https://rapides6.herokuapp.com
 # Learning Exercise !!!
 
 ```javascript runnable
-var fun = function() {
+var func = function() {
     console.log(this)
 }.bind(1);
 
 func();
 ```
 ```javascript runnable
-var fun = function() {
+var func = function() {
     console.log(this)
 }.bind(1);
  
