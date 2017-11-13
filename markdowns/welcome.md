@@ -91,6 +91,81 @@ You can visit for learning ES6 : https://rapides6.herokuapp.com
 # Learning Exercise !!!
 
 ```javascript runnable
+var fun = function() {
+    console.log(this)
+}.bind(1);
+
+func();
+```
+```javascript runnable
+var fun = function() {
+    console.log(this)
+}.bind(1);
+ 
+ var obj = {
+    callFun : fun
+ }
+callFun.func();
+```
+```javascript runnable
+function checkFun(a, b, c){
+    console.log(this);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+checkFun.call(1,2,3,4);
+```
+```javascript runnable
+function checkFun(a, b, c){
+    console.log(this);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+checkFun.apply(1,[2,3,4]);
+```
+```javascript runnable
+function sumOfNumbers() {
+    var total = 0;
+    for(var i = 0; i < arguments.length; i++){
+        total += arguments[i];
+    }
+    return total;
+}
+var sum = sumOfNumbers(1,2,3);
+console.log(sum);
+```
+```javascript runnable
+function sumOfNumbers() {
+    var total = 0;
+    for(var i = 0; i < arguments.length; i++){
+        total += arguments[i];
+    }
+    return total;
+}
+var sum = sumOfNumbers.call(null,1,2,3);
+console.log(sum);
+```
+```javascript runnable
+function sumOfNumbers() {
+    var total = 0;
+    for(var i = 0; i < arguments.length; i++){
+        total += arguments[i];
+    }
+    return total;
+}
+var numbers = [1,2,3];
+var sum = sumOfNumbers.apply(null, numbers);
+console.log(sum);
+```
+```javascript runnable
+function updateZipCode() {
+    console.log(this)
+}
+updateZipCode.call(1);
+```
+```javascript runnable
 var updateZipCode = function () {
     console.log(this);
 };
@@ -136,12 +211,53 @@ var zipCode = {
 updateZipCode.apply(zipCode, ['11888', 'us']);
 ```
 ```javascript runnable
-var updateZipCode = function (newZip, country) {
-    console.log(newZip + ' ' + country);
-};
-var zipCode = {
-    zip: '11787'
-};
-updateZipCode.apply(zipCode, '11888', 'us');
+"use strict";
+var zipcode = {
+    checkZipcode : function() {
+        console.log(this);
+        function updateZipCode() {
+            console.log(this);
+        }
+        updateZipCode.call(this);
+}
+zipcode.checkZipcode();
+```
+```javascript runnable
+"use strict";
+var zipcode = {
+    checkZipcode : function() {
+        console.log(this);
+        var updateZipCode = function() {
+            console.log(this);
+        }.bind(this);
+        updateZipCode.();
+}
+zipcode.checkZipcode();
+```
+```javascript runnable
+Var obj = {
+Name : ‘Ramesh’,
+Prop : {
+Name: ‘Rohit’,
+getName : function(){
+return this.name;
+}
+}
+}
+"use strict";
+var person = {
+    name : "Jack",
+    prop : {
+        name : "Daniel",
+        getName : function() {
+            return this.name;
+        }
+    }
+}
+var  name = person.name;
+console.log(name);
+
+var name = person.prop.getName.bind(person);
+console.log(name);
 ```
 
