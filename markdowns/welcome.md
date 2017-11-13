@@ -103,7 +103,7 @@ var func = function() {
 }.bind(1);
  
  var obj = {
-    callFun : fun
+    callFun : func
  }
 callFun.func();
 ```
@@ -164,12 +164,6 @@ function updateZipCode() {
     console.log(this)
 }
 updateZipCode.call(1);
-```
-```javascript runnable
-var updateZipCode = function () {
-    console.log(this);
-};
-updateZipCode();
 ```
 ```javascript runnable
 var updateZipCode = function () {
