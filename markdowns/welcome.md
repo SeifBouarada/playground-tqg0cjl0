@@ -213,6 +213,7 @@ var zipcode = {
             console.log(this);
         }
         updateZipCode.call(this);
+    }
 }
 zipcode.checkZipcode();
 ```
@@ -225,19 +226,12 @@ var zipcode = {
             console.log(this);
         }.bind(this);
         updateZipCode.();
+    }
 }
 zipcode.checkZipcode();
 ```
 ```javascript runnable
 Var obj = {
-Name : ‘Ramesh’,
-Prop : {
-Name: ‘Rohit’,
-getName : function(){
-return this.name;
-}
-}
-}
 "use strict";
 var person = {
     name : "Jack",
