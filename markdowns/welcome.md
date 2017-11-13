@@ -225,13 +225,12 @@ var zipcode = {
         var updateZipCode = function() {
             console.log(this);
         }.bind(this);
-        updateZipCode.();
+        updateZipCode();
     }
 }
 zipcode.checkZipcode();
 ```
 ```javascript runnable
-Var obj = {
 "use strict";
 var person = {
     name : "Jack",
@@ -242,10 +241,11 @@ var person = {
         }
     }
 }
-var  name = person.name;
-console.log(name);
 
 var name = person.prop.getName.bind(person);
+console.log(name());
+
+var  name = person.prop.getName();
 console.log(name);
 ```
 
