@@ -105,7 +105,7 @@ var func = function() {
  var obj = {
     callFun : func
  }
-callFun.func();
+obj.callFun.func();
 ```
 ```javascript runnable
 function checkFun(a, b, c){
